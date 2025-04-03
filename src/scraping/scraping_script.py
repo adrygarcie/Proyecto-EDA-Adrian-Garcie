@@ -93,7 +93,7 @@ def main():
 
     # Fecha de inicio y número de días
     start_date = '2025-04-01'  # Fecha de inicio
-    num_days = 5  # Número de días a scrapear 7600
+    num_days = 7000  # Número de días a scrapear 7000
 
     # Llamar a la función para scrapear los datos
     scraped_data = scrape_data_for_days(start_date, num_days, driver)
