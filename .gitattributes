@@ -1,2 +1,4 @@
 data/*.csv filter=lfs diff=lfs merge=lfs -text
 data/scraped_earthquakes.csv filter=lfs diff=lfs merge=lfs -text
+data/raw/scraped_earthquakes.csv filter=lfs diff=lfs merge=lfs -text
+data/processed/clean_earthquakes.csv filter=lfs diff=lfs merge=lfs -text
