@@ -33,7 +33,9 @@ else:
 df['Region'] = split_columns[0].fillna(df['Region'])  # Si no hubo división, mantenemos el valor original en 'Region'
 
 #Eliminamos columnas innecesarias.
-clean_df = df.drop(columns=['Type', 'Network', 'A/M'])
+clean_df = df.drop(columns=['Type', 'A/M'])
+#Eliminamos de la columna Magnitude los valores menores a 0 y mayores a 9.4
+clean_df = clean_df[(clean_df['Magnitude'] >= 0.5) & (clean_df['Magnitude'] <= 9.2)]
 
 #Guardamos el dataframe limpio en un archivo csv.
 clean_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'clean_earthquakes.csv'
