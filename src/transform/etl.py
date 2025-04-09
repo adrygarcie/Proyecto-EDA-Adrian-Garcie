@@ -37,6 +37,9 @@ clean_df = df.drop(columns=['Type', 'A/M'])
 #Eliminamos de la columna Magnitude los valores menores a 0 y mayores a 9.4
 clean_df = clean_df[(clean_df['Magnitude'] >= 0.5) & (clean_df['Magnitude'] <= 9.2)]
 
+#Eliminamos todos los registros que no tienen coordenadas o magnitud.
+clean_df = clean_df.dropna(subset=['Lat. degrees', 'Lon. degrees', 'Magnitude'])
+
 #Guardamos el dataframe limpio en un archivo csv.
 clean_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'clean_earthquakes.csv'
 clean_df.to_csv(clean_csv_path, index=False)
