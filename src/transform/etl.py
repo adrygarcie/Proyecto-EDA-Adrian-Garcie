@@ -49,3 +49,8 @@ print("Data cleaned and saved to:", clean_csv_path)
 powerbi_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'earthquakes_powerbi.csv'
 clean_df.to_csv(powerbi_csv_path, index=False)
 print("Data saved for Power BI to:", powerbi_csv_path)
+
+#Guardamos otra copia solo para tableau.
+tableau_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'earthquakes_tableau.csv'
+clean_df.to_csv(tableau_csv_path, index=False)
+print("Data saved for Tableau to:", tableau_csv_path)
