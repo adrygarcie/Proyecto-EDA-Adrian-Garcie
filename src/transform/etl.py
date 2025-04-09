@@ -41,3 +41,8 @@ clean_df = clean_df[(clean_df['Magnitude'] >= 0.5) & (clean_df['Magnitude'] <= 9
 clean_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'clean_earthquakes.csv'
 clean_df.to_csv(clean_csv_path, index=False)
 print("Data cleaned and saved to:", clean_csv_path)
+
+#Guardamos otra copia solo para powerbi.
+powerbi_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'earthquakes_powerbi.csv'
+clean_df.to_csv(powerbi_csv_path, index=False)
+print("Data saved for Power BI to:", powerbi_csv_path)
