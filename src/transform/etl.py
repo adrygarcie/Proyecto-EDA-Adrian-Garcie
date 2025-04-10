@@ -2,6 +2,7 @@
 import pandas as pd
 import os
 from pathlib import Path
+import numpy as np
 
 #Cargamos el archivo csv en un dataframe de pandas.
 
@@ -39,6 +40,20 @@ clean_df = clean_df[(clean_df['Magnitude'] >= 0.5) & (clean_df['Magnitude'] <= 9
 
 #Eliminamos todos los registros que no tienen coordenadas o magnitud.
 clean_df = clean_df.dropna(subset=['Lat. degrees', 'Lon. degrees', 'Magnitude'])
+#Creamos nuevas columnas con coordenadas unicas pero sin apenas variacion.
+n = len(df)
+
+# Generamos valores aleatorios pequeños para ajustar (entre 0 y 1e-5)
+ajuste_lat = np.random.uniform(0, 1e-5, n)
+ajuste_lon = np.random.uniform(0, 1e-5, n)
+
+# Convertimos las columnas originales a float (por si acaso)
+clean_df['Lat. degrees'] = df['Lat. degrees'].astype(float)
+clean_df['Lon. degrees'] = df['Lon. degrees'].astype(float)
+
+# Creamos las nuevas columnas ajustadas
+clean_df['Lat_adj'] = df['Lat. degrees'] + ajuste_lat
+clean_df['Lon_adj'] = df['Lon. degrees'] + ajuste_lon
 
 #Guardamos el dataframe limpio en un archivo csv.
 clean_csv_path = current_dir.parents[1] / 'data' / 'processed' / 'clean_earthquakes.csv'
