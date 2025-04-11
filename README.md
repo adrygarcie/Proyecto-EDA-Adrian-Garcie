@@ -69,6 +69,8 @@ Para solucionar esto el código sigue el siguiente flujo:
 - Este flujo se puede iterar un numero indeterminado de veces cambiando en la iteración el número de dias que queremos scrapear.
 - Por último, cuando la iteracion termina, los datos guardados como df de pandas se trasnforman en un archivo csv y se guardan en **data/raw/**
 
+Este scraping es algo lento, tarda entre 2 y 3 horas en completarse para obtener un dataset como el que ya se encuentra en la carpeta del proyecto.
+
 ### 2 Transformación de los datos.
 A continucacion se explica que datos se han transformado o eliminado y por qué.
 
