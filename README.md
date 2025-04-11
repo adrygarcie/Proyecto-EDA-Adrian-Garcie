@@ -36,7 +36,9 @@ Proyecto1evolve/
 │
 └── requirements.txt               # Archivo de texto con las librerías que deben ser instaladas para que todo funcione.
 ```
-
+## Pasos previos.
+##### Antes de ejecutar el código es importante instalar las dependencias. estas se encuentran en el archivo requirements.txt
+Puedes instalarlas todas con el siguiente comando de bash: pip install -r requirements.txt
 ## Descripcion del Proyecto.
 
 ### 1 Dataset
